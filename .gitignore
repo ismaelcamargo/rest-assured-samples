@@ -1,0 +1,28 @@
+# Compiled code
+bin/
+target/
+
+# Logs
+logs
+*.log
+*.out
+
+# Mac OS files
+*.DS_Store
+
+# JetBrains IDE files
+.idea
+
+# Eclipse IDE files
+.project
+.settings
+
+# Sublime editor files
+*.sublime-*
+
+# Vim or Emacs editor files
+*~
+~*
+*.swo
+*.swp
+#*
