@@ -12,6 +12,7 @@ logs
 
 # JetBrains IDE files
 .idea
+*.iml
 
 # Eclipse IDE files
 .project
