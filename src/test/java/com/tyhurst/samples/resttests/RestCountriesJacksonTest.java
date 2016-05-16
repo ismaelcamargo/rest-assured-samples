@@ -8,6 +8,7 @@ import org.junit.Test;
 import static com.jayway.restassured.RestAssured.get;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class RestCountriesJacksonTest {
 
@@ -38,6 +39,12 @@ public class RestCountriesJacksonTest {
 
         // or 'get' will throw NullPointerException
         assertEquals("Suisse", countryInfo.get("translations").get("fr").textValue());
+        try {
+            countryInfo.get("anUnknownPropertyZ").get("fr").textValue();
+            fail("Expected NullPointerException to be thrown in middle of chain.");
+        } catch (NullPointerException npex) {
+            // Expected NullPointerException due to get("anUnknownPropertyZ").
+        }
 
         // Confirm population.
         assertTrue("Expected population > 8M.", 8000000 < countryInfo.get("population").asInt());
